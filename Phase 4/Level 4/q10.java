@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class q9{
+public class q10{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the length of Arrays");
-        int count;
 
         int x = sc.nextInt();
         int arr[] = new int[x];
@@ -14,19 +13,12 @@ public class q9{
             arr[i] = sc.nextInt();
         }
 
-        int arr2[] = new int[x];
-
         for(int i = 0; i<arr.length; i++){
-            count = 0; // Starting count = 0 for outer loop.
-            for(int n = 0; n<arr.length; n++){
+            for(int n = i+1; n<arr.length; n++){
                 if(arr[i] == arr[n]){
-                    count++; // when matches then increase.
+                   System.out.print(arr[i]+" ");
                 }
             }
-            arr2[i] = count; // Before going to next index copy the count to Array.
-        }
-        for(int ele : arr2){
-            System.out.print(ele + " ");
         }
     }
 }
