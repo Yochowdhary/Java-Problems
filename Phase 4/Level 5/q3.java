@@ -13,15 +13,20 @@ public class q3{
             arr[i] = sc.nextInt();
         }
 
-        int largest = arr[0];
+        int largest = Integer.MIN_VALUE;
+        int seclargest = Integer.MIN_VALUE;
 
-        for(int i = 0; i<arr.length-1; i++){
-            for(int n = 0; n<arr.length; n++)
-            if(arr[i] < arr[n]){
-                largest = arr[i+1];
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] > largest){
+                largest = arr[i];
             }
         }
 
-        System.out.println(largest);
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] != largest && arr[i]>seclargest){
+                seclargest = arr[i];
+            }
+        }
+        System.out.println(seclargest);
     }
 }
